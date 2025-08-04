@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<h1>Edit Product: <%= product.name %></h1>
+<% if (typeof error !== 'undefined') { %>
+    <p class="error"><%= error %></p>
+<% } %>
+<form action="/products/<%= product._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="<%= product.name %>" required>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required><%= product.description %></textarea>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" value="<%= product.price %>" required>
+    <label for="productImage">Product Image (optional):</label>
+    <input type="file" id="productImage" name="productImage">
+    <div class="current-image">
+        <p>Current Image:</p>
+        <img src="<%= product.imageUrl %>" alt="<%= product.name %>" style="width: 150px;">
+    </div>
+    <button type="submit">Update Product</button>
+</form>
+<%- include('../partials/footer') %>

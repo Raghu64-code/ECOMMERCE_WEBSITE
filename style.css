@@ -1,0 +1,81 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-row: auto;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background: #fff;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product-card .actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-card .actions a, .product-card .actions button {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    background: #007bff;
+    border: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}

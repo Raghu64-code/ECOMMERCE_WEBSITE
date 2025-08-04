@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<h1>All Products</h1>
+<div class="product-grid">
+    <% products.forEach(product => { %>
+        <div class="product-card">
+            <img src="<%= product.imageUrl %>" alt="<%= product.name %>">
+            <h3><%= product.name %></h3>
+            <p>$<%= product.price %></p>
+            <p><%= product.description %></p>
+            <% if (isLoggedIn) { %>
+                <div class="actions">
+                    <a href="/products/<%= product._id %>/edit">Edit</a>
+                    <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            <% } %>
+        </div>
+    <% }) %>
+</div>
+<%- include('../partials/footer') %>
